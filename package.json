@@ -1,0 +1,13 @@
+{
+  "name": "khedut-bandhu-root-proxy",
+  "version": "1.0.0",
+  "description": "Root proxy for Render deployment",
+  "main": "server.js",
+  "scripts": {
+    "preinstall": "cd backend && npm install",
+    "build": "cd backend && npm install",
+    "start": "cd backend && node server.js",
+    "dev": "cd backend && node server.js"
+  },
+  "dependencies": {}
+}
