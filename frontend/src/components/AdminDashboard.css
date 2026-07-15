@@ -1,0 +1,182 @@
+/* =====================================================
+   ADMIN DASHBOARD — Dark Agricultural Theme
+====================================================== */
+
+.admin-dashboard-container {
+    background: url("./maindashh.png") no-repeat center center / cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar and layout reuse FarmerDashboard.css — only admin-specific styles here */
+
+/* Sidebar header override for admin */
+.sidebar-header {
+    padding: 18px 20px;
+    background: linear-gradient(135deg, rgba(39,174,96,0.25), rgba(26,188,156,0.15));
+    border-bottom: 1px solid rgba(39,174,96,0.2);
+    color: #2ecc71;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* =====================================================
+   TABLES — Dark Theme
+====================================================== */
+.table-responsive { overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background: transparent;
+}
+
+th {
+    background: rgba(39,174,96,0.08);
+    color: #2ecc71;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(39,174,96,0.2);
+    text-align: left;
+}
+
+td {
+    padding: 13px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #c8ddef;
+    font-size: 14px;
+}
+
+td strong { color: #e8f4f8; }
+
+tr:hover td { background: rgba(39,174,96,0.05); }
+
+/* Status Badges */
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    display: inline-block;
+}
+
+.status.pending {
+    background: rgba(243,156,18,0.15);
+    color: #f39c12;
+    border: 1px solid rgba(243,156,18,0.3);
+}
+
+.status.resolved {
+    background: rgba(39,174,96,0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(39,174,96,0.3);
+}
+
+.status.rejected {
+    background: rgba(231,76,60,0.15);
+    color: #e74c3c;
+    border: 1px solid rgba(231,76,60,0.3);
+}
+
+.status.inprogress {
+    background: rgba(52,152,219,0.15);
+    color: #3498db;
+    border: 1px solid rgba(52,152,219,0.3);
+}
+
+.status-select {
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.06);
+    color: #c8ddef;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+.desc-preview {
+    font-size: 12px;
+    color: #4a7fa5;
+    margin: 4px 0 0 0;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar-header { display: none; }
+    th, td { padding: 9px 10px; font-size: 12px; }
+    table { font-size: 12px; }
+}
+
+/* =====================================================
+   ADMIN SECTION HEADINGS & MISC
+====================================================== */
+.admin-section { color: #e8f4f8; }
+.admin-section h3 { color: #e8f4f8; font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+.admin-section p { color: #8aadcc; }
+
+/* Complaint media thumbnail */
+.complaint-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Status: In Progress (two words → class becomes "in") */
+.status.in {
+    background: rgba(52,152,219,0.15);
+    color: #3498db;
+    border: 1px solid rgba(52,152,219,0.3);
+}
+
+/* Admin refund hint */
+.admin-refund-hint {
+    font-size: 11px;
+    color: #6b8cae !important;
+    margin-top: 5px;
+}
+
+.admin-refund-hint strong { color: #c8ddef; }
+
+/* Status select dropdown option text */
+.status-select option {
+    background: #112240;
+    color: #c8ddef;
+}
+
+/* Admin section labels visible */
+.admin-section label {
+    color: #6b8cae;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Override any residual light background on selects inside admin tables */
+.admin-section select {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #c8ddef;
+    border-radius: 6px;
+    padding: 5px 8px;
+    outline: none;
+}

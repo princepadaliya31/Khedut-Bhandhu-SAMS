@@ -1,0 +1,78 @@
+/* =====================================================
+   COMPLAINT PAGE — Dark Agricultural Theme
+====================================================== */
+.complaint-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  background: transparent;
+  min-height: calc(100vh - 80px);
+}
+
+.complaint-header {
+  background: rgba(17,34,64,0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 28px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.complaint-header h2 { margin: 0 0 8px; color: #e8f4f8; font-size: 28px; font-weight: 800; }
+.complaint-header p { margin: 0; color: #6b8cae; font-size: 15px; }
+
+.complaint-page .complaint-form-container {
+  background: rgba(17,34,64,0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 28px;
+  border-radius: 14px;
+}
+
+.complaint-form { display: flex; flex-direction: column; gap: 18px; }
+
+.complaint-page .form-group label { font-weight: 600; color: #6b8cae; font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; }
+
+.complaint-page .form-group input,
+.complaint-page .form-group textarea {
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  color: #e8f4f8;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.25s;
+}
+
+.complaint-page .form-group input:focus,
+.complaint-page .form-group textarea:focus {
+  border-color: rgba(39,174,96,0.5);
+  background: rgba(39,174,96,0.06);
+  box-shadow: 0 0 0 3px rgba(39,174,96,0.1);
+}
+
+.complaint-page .form-group textarea { resize: vertical; min-height: 100px; }
+
+.btn-submit {
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #27ae60, #1abc9c);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+  align-self: flex-start;
+  box-shadow: 0 6px 18px rgba(39,174,96,0.3);
+}
+
+.btn-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(39,174,96,0.45); }
+.btn-submit:disabled { background: #1a2a4a; color: #3d5a73; cursor: not-allowed; box-shadow: none; }
+
+.message { padding: 12px 16px; border-radius: 10px; font-size: 13px; }
+.message.success { background: rgba(39,174,96,0.12); color: #2ecc71; border: 1px solid rgba(39,174,96,0.25); }
+.message.error { background: rgba(231,76,60,0.12); color: #e74c3c; border: 1px solid rgba(231,76,60,0.25); }
+
+@media (max-width: 768px) { .complaint-page .complaint-form-container { padding: 18px; } }

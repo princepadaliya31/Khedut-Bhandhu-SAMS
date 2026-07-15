@@ -1,0 +1,83 @@
+/* =====================================================
+   SCHEMES PAGE — Dark Agricultural Theme
+====================================================== */
+.schemes-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  background: transparent;
+  min-height: calc(100vh - 80px);
+}
+
+.schemes-header {
+  background: rgba(17,34,64,0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 28px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.schemes-header h2 { margin: 0 0 8px; color: #e8f4f8; font-size: 28px; font-weight: 800; }
+.schemes-header p { margin: 0; color: #6b8cae; font-size: 15px; }
+
+.schemes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.scheme-card {
+  background: rgba(17,34,64,0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 22px;
+  border-radius: 14px;
+  transition: all 0.25s;
+}
+
+.scheme-card:hover {
+  border-color: rgba(39,174,96,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.scheme-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.scheme-header h3 { margin: 0; color: #2ecc71; font-size: 17px; flex: 1; }
+
+.scheme-category {
+  background: rgba(39,174,96,0.12);
+  border: 1px solid rgba(39,174,96,0.25);
+  color: #2ecc71;
+  padding: 3px 10px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.scheme-description { color: #8aadcc; line-height: 1.7; margin-bottom: 18px; font-size: 13px; }
+
+.scheme-actions { display: flex; gap: 8px; }
+
+.btn-view-form, .btn-apply {
+  flex: 1; padding: 9px 18px; border: none; border-radius: 8px;
+  font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.25s;
+}
+
+.btn-view-form {
+  background: rgba(255,255,255,0.06);
+  color: #8aadcc;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-view-form:hover { background: rgba(255,255,255,0.1); color: #c8ddef; }
+
+.btn-apply {
+  background: linear-gradient(135deg, #27ae60, #1abc9c);
+  color: white;
+  box-shadow: 0 4px 12px rgba(39,174,96,0.3);
+}
+
+.btn-apply:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(39,174,96,0.45); }
+
+@media (max-width: 768px) { .schemes-grid { grid-template-columns: 1fr; } }

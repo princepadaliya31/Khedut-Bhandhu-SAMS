@@ -1,0 +1,175 @@
+/* =====================================================
+   LAND FORM — Dark Agricultural Theme
+====================================================== */
+.land-form-container {
+    background: rgba(17,34,64,0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.profile-form { padding: 22px; }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.land-form-container .form-group label,
+.profile-form .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #6b8cae;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.land-form-container .form-group input,
+.land-form-container .form-group select,
+.profile-form .form-group input,
+.profile-form .form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    color: #e8f4f8;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.25s;
+}
+
+.land-form-container .form-group input:focus,
+.land-form-container .form-group select:focus,
+.profile-form .form-group input:focus,
+.profile-form .form-group select:focus {
+    border-color: rgba(39,174,96,0.5);
+    background: rgba(39,174,96,0.06);
+    box-shadow: 0 0 0 3px rgba(39,174,96,0.1);
+}
+
+/* Aadhar Verification */
+.aadhar-group { display: flex; gap: 10px; }
+
+.verify-btn, .verify-small-btn {
+    background: linear-gradient(135deg, #1a6ec0, #1abc9c);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.verify-btn:hover, .verify-small-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(26,108,192,0.3); }
+
+.otp-group, .otp-group-small { margin-top: 10px; display: flex; gap: 10px; }
+.otp-input, .otp-input-small { width: 100px !important; }
+
+.confirm-btn, .confirm-small-btn {
+    background: linear-gradient(135deg, #27ae60, #1abc9c);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.verified-badge { color: #2ecc71; font-weight: 700; font-size: 14px; margin-top: 5px; display: block; }
+
+/* Member Section */
+.holders-section { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 18px; }
+.holders-section h3 { color: #e8f4f8; }
+
+.holder-tag {
+    background: rgba(39,174,96,0.12);
+    border: 1px solid rgba(39,174,96,0.25);
+    color: #2ecc71;
+    padding: 4px 10px;
+    border-radius: 14px;
+    margin-bottom: 5px;
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.member-form-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 14px;
+}
+
+.member-input-row, .member-aadhar-row { display: flex; gap: 10px; margin-bottom: 14px; }
+
+.member-input-row input, .member-aadhar-row input {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    color: #e8f4f8;
+    font-size: 14px;
+}
+
+.verified-text { font-size: 18px; padding-top: 5px; }
+.member-actions { display: flex; gap: 10px; }
+
+.add-member-btn {
+    background: linear-gradient(135deg, #27ae60, #1abc9c);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.save-member-btn {
+    background: linear-gradient(135deg, #27ae60, #1abc9c);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.save-member-btn:disabled { background: #1a2a4a; color: #3d5a73; cursor: not-allowed; }
+
+.cancel-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #8aadcc;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.save-all-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    background: linear-gradient(135deg, #27ae60, #1abc9c);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(39,174,96,0.3);
+}
