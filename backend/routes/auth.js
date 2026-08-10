@@ -6,6 +6,42 @@ const jwt = require("jsonwebtoken");
 const sendEmail = require("../services/emailService");
 
 // SIGNUP
+router.get("/test-email", async (req, res) => {
+  const nodemailer = require("nodemailer");
+  try {
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+        },
+        tls: { rejectUnauthorized: false },
+    });
+    await transporter.verify();
+    const info = await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_USER,
+        subject: "Khedut Bandhu - Live SMTP Test",
+        text: "SMTP verification and test mail succeeded on the live server!",
+    });
+    res.json({ 
+      success: true, 
+      message: "SMTP verified and email sent!", 
+      response: info.response,
+      user: process.env.EMAIL_USER
+    });
+  } catch (err) {
+    res.status(500).json({ 
+      success: false, 
+      error: err.message, 
+      code: err.code,
+      envUser: process.env.EMAIL_USER ? "Configured" : "Not Configured",
+      envPass: process.env.EMAIL_PASS ? "Configured" : "Not Configured"
+    });
+  }
+});
+
+// SIGNUP
 router.post("/signup", async (req, res) => {
   try {
     const { username, email, phone, password, role, department } = req.body;
