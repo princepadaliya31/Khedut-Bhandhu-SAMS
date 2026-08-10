@@ -9,6 +9,39 @@ const sendEmail = require("../services/emailService");
 router.get("/test-email", async (req, res) => {
   const nodemailer = require("nodemailer");
   try {
+    // 1. If Brevo HTTP is configured
+    if (process.env.BREVO_API_KEY) {
+      const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+          method: "POST",
+          headers: {
+              "accept": "application/json",
+              "api-key": process.env.BREVO_API_KEY,
+              "content-type": "application/json"
+          },
+          body: JSON.stringify({
+              sender: { name: "Khedut Bandhu Test", email: process.env.EMAIL_USER || "princepadaliya05@gmail.com" },
+              to: [{ email: process.env.EMAIL_USER || "princepadaliya05@gmail.com" }],
+              subject: "Khedut Bandhu - Live HTTP Test",
+              htmlContent: "Brevo HTTP API test succeeded on Render!"
+          })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        return res.json({ 
+          success: true, 
+          message: "Brevo HTTP email sent successfully!", 
+          response: data 
+        });
+      } else {
+        return res.status(500).json({ 
+          success: false, 
+          error: "Brevo API returned error", 
+          details: data 
+        });
+      }
+    }
+
+    // 2. Default SMTP verification
     const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 587,
@@ -38,7 +71,8 @@ router.get("/test-email", async (req, res) => {
       error: err.message, 
       code: err.code,
       envUser: process.env.EMAIL_USER ? "Configured" : "Not Configured",
-      envPass: process.env.EMAIL_PASS ? "Configured" : "Not Configured"
+      envPass: process.env.EMAIL_PASS ? "Configured" : "Not Configured",
+      envBrevo: process.env.BREVO_API_KEY ? "Configured" : "Not Configured"
     });
   }
 });
