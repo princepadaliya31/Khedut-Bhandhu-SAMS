@@ -50,12 +50,12 @@ __pycache__/
 *.pyc
 
 # AI Model files (too large for GitHub - 100MB limit)
-*.h5
+# *.h5
 *.keras
 *.pkl
 *.onnx
-backend/crop_disease_model.h5
-backend/best_phase1.h5
+# backend/crop_disease_model.h5
+# backend/best_phase1.h5
 
 # PlantVillage training dataset
 backend/plantvillage/

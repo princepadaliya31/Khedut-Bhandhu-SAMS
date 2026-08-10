@@ -1,9 +1,32 @@
-from pptx import Presentation
-from pptx.util import Inches, Pt, Emu
-from pptx.dml.color import RGBColor
-from pptx.enum.text import PP_ALIGN
-from pptx.util import Inches, Pt
+import sys
 import copy
+import os
+import subprocess
+
+try:
+    from pptx import Presentation
+    from pptx.util import Inches, Pt, Emu
+    from pptx.dml.color import RGBColor
+    from pptx.enum.text import PP_ALIGN
+except ImportError:
+    print("Required library 'python-pptx' is missing. Attempting to install it...", flush=True)
+    try:
+        import importlib
+        cmd = [sys.executable, "-m", "pip", "install", "python-pptx"]
+        print(f"Running: {' '.join(cmd)}", flush=True)
+        subprocess.check_call(cmd)
+        importlib.invalidate_caches()
+        from pptx import Presentation
+        from pptx.util import Inches, Pt, Emu
+        from pptx.dml.color import RGBColor
+        from pptx.enum.text import PP_ALIGN
+        print("Successfully installed 'python-pptx'!", flush=True)
+    except Exception as e:
+        print(f"Error: Could not install 'python-pptx'. Details: {e}", file=sys.stderr)
+        print("Please run 'pip install python-pptx' manually.", file=sys.stderr)
+        sys.exit(1)
+
+
 
 prs = Presentation()
 prs.slide_width  = Inches(13.33)
@@ -395,7 +418,11 @@ txt(sl, "🔗 github.com/apk3206/Khedut-Bandhu",
     0, 6.35, 13.33, 0.4, 12, False, GOLD, PP_ALIGN.CENTER)
 
 # ── Save ─────────────────────────────────────────────────
-out = r"d:\frontend\Khedut_Bandhu_Presentation.pptx"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+out = os.path.join(script_dir, "Khedut_Bandhu_Presentation.pptx")
 prs.save(out)
-print(f"✅ PPT saved: {out}")
+try:
+    print(f"✅ PPT saved: {out}")
+except UnicodeEncodeError:
+    print(f"[Success] PPT saved: {out}")
 print(f"   Slides: {len(prs.slides)}")

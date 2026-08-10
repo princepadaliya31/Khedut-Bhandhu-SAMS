@@ -1,4 +1,4 @@
-html = '''<!DOCTYPE html>
+ehtml = '''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -421,7 +421,11 @@ h1{text-align:center;font-size:30px;font-weight:900;color:#0d1b2a;margin-bottom:
 </body>
 </html>'''
 
-with open('khedut_architecture.html', 'w', encoding='utf-8') as f:
-    f.write(html)
+import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+out_path = os.path.join(script_dir, 'khedut_architecture.html')
 
-print("Generated: khedut_architecture.html")
+with open(out_path, 'w', encoding='utf-8') as f:
+    f.write(ehtml)
+
+print(f"Generated: {out_path}")

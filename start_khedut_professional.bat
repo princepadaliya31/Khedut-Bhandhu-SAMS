@@ -5,7 +5,7 @@ echo   🚀 Khedut Bandhu - Launching All Services
 echo ===================================================
 
 :: 1. Start AI Microservice (Python FastAPI)
-echo [1/4] Starting AI Service (Port 8000)...
+echo [1/4] Starting AI Service (Port 8005)...
 cd /d "%~dp0\backend"
 start "AI Service" cmd /k "myenv\Scripts\activate && python ../ai-service/main.py"
 
@@ -22,7 +22,7 @@ start "Frontend UI" cmd /k "npm start"
 echo [4/4] Finalizing...
 echo ===================================================
 echo ✅ All services are launching in separate windows.
-echo 🌿 AI Service: http://localhost:8000
+echo 🌿 AI Service: http://localhost:8005
 echo 🖥️  Backend:    http://localhost:5000
 echo 📱 Frontend:   http://localhost:3000
 echo ===================================================
