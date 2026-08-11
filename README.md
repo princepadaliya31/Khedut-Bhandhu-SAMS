@@ -220,8 +220,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 👨‍💻 Author
-**Prince Padaliya**
-* [GitHub](https://github.com/princepadaliya31)
-* [LinkedIn](https://linkedin.com/in/princepadaliya)
-* Email: princepadaliya31@gmail.com
+
